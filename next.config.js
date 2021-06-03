@@ -19,7 +19,7 @@ module.exports = withPlugins([[indexSearch], [feed], [sitemap], [socialImages]],
   env: {
     WORDPRESS_GRAPHQL_ENDPOINT: process.env.WORDPRESS_GRAPHQL_ENDPOINT,
     WORDPRESS_MENU_LOCATION_NAVIGATION: process.env.WORDPRESS_MENU_LOCATION_NAVIGATION || 'PRIMARY',
-    WORDPRESS_PLUGIN_SEO: parseEnvValue(process.env.WORDPRESS_PLUGIN_SEO, false),
+    WORDPRESS_PLUGIN_SEO: parseEnvValue(process.env.WORDPRESS_PLUGIN_SEO, true),
 
     // By default, the number of posts per page used in pagination is 10.
     // This can be modified by setting the variable POSTS_PER_PAGE to a
