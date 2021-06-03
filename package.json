@@ -1,9 +1,9 @@
 {
-  "name": "next-wordpress-starter",
-  "homepage": "https://next-wordpress-starter.spacejelly.dev",
+  "name": "JF-Dev",
+  "homepage": "http://jf-dev.local/",
   "version": "0.1.0",
   "license": "MIT",
-  "author": "Colby Fayock <hello@colbyfayock.com>",
+  "author": "John Foster",
   "scripts": {
     "build": "next build && next export",
     "wpe-build": "npm run build",
@@ -54,9 +54,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/colbyfayock/next-wordpress-starter"
-  },
-  "bugs": {
-    "url": "https://github.com/colbyfayock/next-wordpress-starter/issues"
+    "url": "https://github.com/JohnFoster44/next-wordpress"
   }
 }
