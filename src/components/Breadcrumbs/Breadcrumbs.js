@@ -1,16 +1,8 @@
 import Link from 'next/link';
 
-import ClassName from 'models/classname';
-
-import styles from './Breadcrumbs.module.scss';
-
-const Breadcrumbs = ({ className, breadcrumbs }) => {
-  const breadcrumbsClassName = new ClassName(styles.breadcrumbs);
-
-  breadcrumbsClassName.addIf(className, className);
-
+const Breadcrumbs = ({ breadcrumbs }) => {
   return (
-    <ul className={breadcrumbsClassName.toString()}>
+    <ul>
       {breadcrumbs.map(({ id, title, uri }) => {
         return (
           <li key={id}>

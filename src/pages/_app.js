@@ -9,7 +9,7 @@ import { getTopLevelPages } from 'lib/pages';
 import { getCategories } from 'lib/categories';
 import { getAllMenus, createMenuFromPages, MENU_LOCATION_NAVIGATION_DEFAULT } from 'lib/menus';
 
-import 'styles/globals.scss';
+import 'styles/globals.css';
 
 function App({ Component, pageProps = {}, metadata, recentPosts, categories, menus }) {
   const site = useSiteContext({

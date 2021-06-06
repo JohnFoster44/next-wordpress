@@ -3,26 +3,19 @@ import Link from 'next/link';
 import { categoryPathBySlug } from 'lib/categories';
 import { authorPathByName } from 'lib/users';
 import { formatDate } from 'lib/datetime';
-import ClassName from 'models/classname';
-
 import { FaMapPin } from 'react-icons/fa';
-import styles from './Metadata.module.scss';
 
 const DEFAULT_METADATA_OPTIONS = {
   compactCategories: true,
 };
 
-const Metadata = ({ className, author, date, categories, options = DEFAULT_METADATA_OPTIONS, isSticky = false }) => {
-  const metadataClassName = new ClassName(styles.metadata);
-
-  metadataClassName.addIf(className, className);
-
+const Metadata = ({ author, date, categories, options = DEFAULT_METADATA_OPTIONS, isSticky = false }) => {
   const { compactCategories } = options;
 
   return (
-    <ul className={metadataClassName.toString()}>
+    <ul>
       {author && (
-        <li className={styles.metadataAuthor}>
+        <li>
           <address>
             {author.avatar && (
               <img
@@ -47,7 +40,7 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
         </li>
       )}
       {Array.isArray(categories) && categories[0] && (
-        <li className={styles.metadataCategories}>
+        <li>
           {compactCategories && (
             <p title={categories.map(({ name }) => name).join(', ')}>
               <Link href={categoryPathBySlug(categories[0].slug)}>
@@ -72,7 +65,7 @@ const Metadata = ({ className, author, date, categories, options = DEFAULT_METAD
         </li>
       )}
       {isSticky && (
-        <li className={styles.metadataSticky}>
+        <li>
           <FaMapPin aria-label="Sticky Post" />
         </li>
       )}

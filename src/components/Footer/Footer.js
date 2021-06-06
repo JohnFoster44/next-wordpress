@@ -7,8 +7,6 @@ import { categoryPathBySlug } from 'lib/categories';
 import Section from 'components/Section';
 import Container from 'components/Container';
 
-import styles from './Footer.module.scss';
-
 const Footer = () => {
   const { metadata = {}, recentPosts = [], categories = [] } = useSite();
   const { title } = metadata;
@@ -18,19 +16,19 @@ const Footer = () => {
   const hasMenu = hasRecentPosts || hasRecentCategories;
 
   return (
-    <footer className={styles.footer}>
+    <footer>
       {hasMenu && (
-        <Section className={styles.footerMenu}>
+        <Section>
           <Container>
-            <ul className={styles.footerMenuColumns}>
+            <ul>
               {hasRecentPosts && (
                 <li>
                   <Link href="/posts/">
-                    <a className={styles.footerMenuTitle}>
+                    <a>
                       <strong>Recent Posts</strong>
                     </a>
                   </Link>
-                  <ul className={styles.footerMenuItems}>
+                  <ul>
                     {recentPosts.map((post) => {
                       const { id, slug, title } = post;
                       return (
@@ -47,11 +45,11 @@ const Footer = () => {
               {hasRecentCategories && (
                 <li>
                   <Link href="/categories/">
-                    <a className={styles.footerMenuTitle}>
+                    <a>
                       <strong>Categories</strong>
                     </a>
                   </Link>
-                  <ul className={styles.footerMenuItems}>
+                  <ul>
                     {categories.map((category) => {
                       const { id, slug, name } = category;
                       return (
@@ -66,10 +64,10 @@ const Footer = () => {
                 </li>
               )}
               <li>
-                <p className={styles.footerMenuTitle}>
+                <p>
                   <strong>More</strong>
                 </p>
-                <ul className={styles.footerMenuItems}>
+                <ul>
                   <li>
                     <Link href="/feed.xml">
                       <a>RSS</a>
@@ -87,7 +85,7 @@ const Footer = () => {
         </Section>
       )}
 
-      <Section className={styles.footerLegal}>
+      <Section>
         <Container>
           <p>
             &copy; {new Date().getFullYear()} {title}

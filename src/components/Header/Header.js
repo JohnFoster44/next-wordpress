@@ -1,10 +1,8 @@
 import Container from 'components/Container';
 
-import styles from './Header.module.scss';
-
 const Header = ({ children }) => {
   return (
-    <header className={styles.header}>
+    <header className="flex justify-center items-center">
       <Container>{children}</Container>
     </header>
   );

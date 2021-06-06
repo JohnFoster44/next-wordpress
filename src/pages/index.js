@@ -9,8 +9,6 @@ import Container from 'components/Container';
 import PostCard from 'components/PostCard';
 import Pagination from 'components/Pagination';
 
-import styles from 'styles/pages/Home.module.scss';
-
 export default function Home({ posts, pagination }) {
   const { metadata = {} } = useSite();
   const { title, description } = metadata;
@@ -20,14 +18,12 @@ export default function Home({ posts, pagination }) {
       <WebsiteJsonLd siteTitle={title} />
       <Header>
         <h1
-          className={styles.title}
           dangerouslySetInnerHTML={{
             __html: title,
           }}
         />
 
         <p
-          className={styles.description}
           dangerouslySetInnerHTML={{
             __html: description,
           }}
@@ -36,8 +32,8 @@ export default function Home({ posts, pagination }) {
 
       <Section>
         <Container>
-          <h2 className="sr-only">Posts</h2>
-          <ul className={styles.posts}>
+          <h2>Posts</h2>
+          <ul>
             {posts.map((post) => {
               return (
                 <li key={post.slug}>

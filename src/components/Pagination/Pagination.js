@@ -5,7 +5,6 @@ import { Helmet } from 'react-helmet';
 
 import { GrPrevious as PreviousIcon, GrNext as NextIcon } from 'react-icons/gr';
 import { HiOutlineDotsHorizontal as Dots } from 'react-icons/hi';
-import styles from './Pagination.module.scss';
 
 const MAX_NUM_PAGES = 9;
 
@@ -53,18 +52,18 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
         {hasNextPage && <link rel="next" href={`${homepage}${path}${currentPage + 1}`} />}
       </Helmet>
 
-      <nav className={styles.nav} role="navigation" aria-label="Pagination Navigation">
+      <nav role="navigation" aria-label="Pagination Navigation">
         {hasPreviousPage && (
           <Link href={`${path}${currentPage - 1}`}>
-            <a className={styles.prev} aria-label="Goto Previous Page">
+            <a aria-label="Goto Previous Page">
               <PreviousIcon /> Previous
             </a>
           </Link>
         )}
 
-        <ul className={styles.pages}>
+        <ul>
           {hasPrevDots && (
-            <li className={styles.dots}>
+            <li>
               <Dots aria-label={`Navigation to pages 1-${pages[0] - 1} hidden`} />
             </li>
           )}
@@ -72,7 +71,7 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
             const active = page === currentPage;
             return active ? (
               <li key={page}>
-                <span className={styles.active} aria-label={`Current Page, Page ${page}`} aria-current="true">
+                <span aria-label={`Current Page, Page ${page}`} aria-current="true">
                   {page}
                 </span>
               </li>
@@ -87,7 +86,7 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
             );
           })}
           {hasNextDots && (
-            <li className={styles.dots}>
+            <li>
               <Dots aria-label={`Navigation to pages ${pages[pages.length - 1] + 1}-${pagesCount} hidden`} />
             </li>
           )}
@@ -95,7 +94,7 @@ const Pagination = ({ pagesCount, currentPage, basePath, addCanonical = true }) 
 
         {hasNextPage && (
           <Link href={`${path}${currentPage + 1}`}>
-            <a className={styles.next} aria-label="Goto Next Page">
+            <a aria-label="Goto Next Page">
               Next <NextIcon />
             </a>
           </Link>
