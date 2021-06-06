@@ -15,8 +15,6 @@ import Container from 'components/Container';
 import FeaturedImage from 'components/FeaturedImage';
 import Breadcrumbs from 'components/Breadcrumbs';
 
-import styles from 'styles/pages/Page.module.scss';
-
 export default function Page({ page, breadcrumbs }) {
   const { title, metaTitle, description, slug, content, featuredImage, children } = page;
 
@@ -61,14 +59,13 @@ export default function Page({ page, breadcrumbs }) {
             dangerouslySetInnerHTML={featuredImage.caption}
           />
         )}
-        <h1 className={styles.title}>{title}</h1>
+        <h1>{title}</h1>
       </Header>
 
       <Content>
         <Section>
           <Container>
             <div
-              className={styles.content}
               dangerouslySetInnerHTML={{
                 __html: content,
               }}
@@ -77,10 +74,10 @@ export default function Page({ page, breadcrumbs }) {
         </Section>
 
         {hasChildren && (
-          <Section className={styles.sectionChildren}>
+          <Section>
             <Container>
               <aside>
-                <p className={styles.childrenHeader}>
+                <p>
                   <strong>{title}</strong>
                 </p>
                 <ul>

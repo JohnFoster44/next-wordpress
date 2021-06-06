@@ -173,16 +173,18 @@ const Nav = () => {
 
   return (
     <nav>
-      <Section>
-        <p>
+      <Section className=" border-4 border-red-400 ">
+        {/* title */}
+        <p className="bg-red-100">
           <Link href="/">
             <a>{title}</a>
           </Link>
         </p>
-        <ul>
+        {/* page listing */}
+        <ul className="bg-red-200 flex">
           {navigation?.map(({ id, path, label, title, target, children }) => {
             return (
-              <li key={id}>
+              <li className="px-2" key={id}>
                 {!path.includes('http') && !target && (
                   <Link href={path}>
                     <a title={title}>{label}</a>
@@ -218,7 +220,8 @@ const Nav = () => {
             );
           })}
         </ul>
-        <div>
+        {/* search bar */}
+        <div className="bg-red-300">
           {searchVisibility === SEARCH_HIDDEN && (
             <button onClick={handleOnToggleSearch}>
               <span className="sr-only">Toggle Search</span>
